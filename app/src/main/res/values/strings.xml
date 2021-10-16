@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Stym</string>
+    <string name="listado_juegos">LISTADO JUEGOS</string>
+    <string name="cerrar_sesion">CERRAR SESIÓN</string>
+    <string name="nombre">Nombre</string>
+    <string name="descripcion">Descripción</string>
+    <string name="logo_stym">Logo Stym</string>
+    <string name="logo_juego">Logo Juego</string>
+    <string name="login">LOGIN</string>
+    <string name="ingresar">INGRESAR</string>
+    <string name="detalle_juegos">DETALLE JUEGOS</string>
+    <string name="jugadores">Jugadores:</string>
+    <string name="compatibilidad">Compatibilidad:</string>
+    <string name="genero">Género:</string>
+    <string name="idioma">Idioma:</string>
+    <string name="clasificacion">Clasificación:</string>
+    <string name="volver">VOLVER</string>
+    <string name="nombre_usuario">Nombre de Usuario</string>
+    <string name="contrasenia">Contraseña</string>
+</resources>
