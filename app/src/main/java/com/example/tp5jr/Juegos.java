@@ -1,8 +1,8 @@
 package com.example.tp5jr;
 
-public class DetalleJuegos {
-    private int id;
-    private int imagen;
+public class Juegos {
+    private int id_juego;
+    private String imagen;
     private String nombre;
     private String descripcion;
     private String jugadores;
@@ -10,31 +10,24 @@ public class DetalleJuegos {
     private String genero;
     private String idioma;
     private String clasificacion;
+    private int activo;
 
-    public DetalleJuegos(int id, int imagen, String nombre, String descripcion, String jugadores,
-                         String compatibilidad, String genero, String idioma, String clasificacion) {
-        this.id = id;
-        this.imagen = imagen;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.jugadores = jugadores;
-        this.compatibilidad = compatibilidad;
-        this.genero = genero;
-        this.idioma = idioma;
-        this.clasificacion = clasificacion;
+    public Juegos() {
     }
 
-    public int getId() {
-        return id;
+    public int getId_juego() {
+        return id_juego;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_juego(int id_juego) {
+        this.id_juego = id_juego;
     }
 
-    public int getImagen() { return imagen; }
+    public String getImagen() {
+        return imagen;
+    }
 
-    public void setImagen(int imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 
@@ -90,5 +83,13 @@ public class DetalleJuegos {
 
     public void setClasificacion(String clasificacion) {
         this.clasificacion = clasificacion;
+    }
+
+    public int getActivo() {
+        return activo;
+    }
+
+    public void setActivo(int activo) {
+        this.activo = activo;
     }
 }

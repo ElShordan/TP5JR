@@ -63,11 +63,23 @@
         android:id="@+id/btnLoginActivityIngresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
+        android:layout_marginStart="72dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/bordes_redondos"
         android:text="@string/ingresar"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnLoginActivityRegistrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bordes_redondos"
+        android:text="@string/registrar"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnLoginActivityIngresar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

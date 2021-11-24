@@ -7,24 +7,25 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class ListadoJuegosAdapter extends BaseAdapter {
+    private List<Juegos> listaJuegos;
 
-    private List<ListadoJuegos> listaListadoJuegos;
-
-    public ListadoJuegosAdapter(List<ListadoJuegos> listaListadoJuegos) {
-        this.listaListadoJuegos = listaListadoJuegos;
+    public ListadoJuegosAdapter(List<Juegos> listaJuegos) {
+        this.listaJuegos = listaJuegos;
     }
 
     @Override
     public int getCount() {
-        return this.listaListadoJuegos.size();
+        return this.listaJuegos.size();
     }
 
     @Override
-    public ListadoJuegos getItem(int position) {
-        return this.listaListadoJuegos.get(position);
+    public Juegos getItem(int position) {
+        return this.listaJuegos.get(position);
     }
 
     @Override
@@ -43,15 +44,18 @@ public class ListadoJuegosAdapter extends BaseAdapter {
             layout = convertView;
         }
 
-        ListadoJuegos item = getItem(position);
+        Juegos item = getItem(position);
 
         TextView txtListadoJuegosAdapterNombre = (TextView) layout.findViewById(R.id.txtListadoJuegosAdapterNombre);
         TextView txtListadoJuegosAdapterDescripcion = (TextView) layout.findViewById(R.id.txtListadoJuegosAdapterDescripcion);
         ImageView imgListadoJuegosAdapterJuego = (ImageView) layout.findViewById(R.id.imgListadoJuegosAdapterJuego);
 
+        Picasso.get()
+                .load(item.getImagen())
+                .into(imgListadoJuegosAdapterJuego);
+
         txtListadoJuegosAdapterNombre.setText(item.getNombre());
         txtListadoJuegosAdapterDescripcion.setText(item.getDescripcion());
-        imgListadoJuegosAdapterJuego.setImageResource(item.getImagen());
         return layout;
     }
 }

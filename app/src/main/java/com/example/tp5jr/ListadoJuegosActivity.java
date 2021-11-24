@@ -19,7 +19,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ListadoJuegosActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    private List<ListadoJuegos> listaListadoJuegos;
+    private List<Juegos> listaJuegos;
     private ListadoJuegosAdapter adapter;
     private ListView lstListadoJuegosActivity;
 
@@ -28,11 +28,13 @@ public class ListadoJuegosActivity extends AppCompatActivity implements AdapterV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_juegos);
 
-        listaListadoJuegos = new ArrayList<ListadoJuegos>();
+        listaJuegos = new ArrayList<Juegos>();
 
-        obtenerListaApi();
+        int activo = 1;
 
-        adapter = new ListadoJuegosAdapter(listaListadoJuegos);
+        obtenerListaApi(activo);
+
+        adapter = new ListadoJuegosAdapter(listaJuegos);
 
         lstListadoJuegosActivity = findViewById(R.id.lstListadoJuegosActivity);
 
@@ -41,6 +43,15 @@ public class ListadoJuegosActivity extends AppCompatActivity implements AdapterV
         lstListadoJuegosActivity.setOnItemClickListener(this);
 
         Button btnListadoJuegosActivityCerrarSesion = (Button) findViewById(R.id.btnListadoJuegosActivityCerrarSesion);
+        Button btnListadoJuegosActivityAgregar = (Button) findViewById(R.id.btnListadoJuegosActivityAgregar);
+
+        btnListadoJuegosActivityAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListadoJuegosActivity.this, AgregarJuegoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnListadoJuegosActivityCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,26 +63,26 @@ public class ListadoJuegosActivity extends AppCompatActivity implements AdapterV
         });
     }
 
-    private void obtenerListaApi() {
+    private void obtenerListaApi(int activo) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.107:5000")
+                .baseUrl("http://192.168.5.133:5000/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiService postService = retrofit.create(ApiService.class);
-        Call<List<ListadoJuegos>> call = postService.getListadoJuegos();
+        Call<List<Juegos>> call = postService.getListadoJuegos(activo);
 
-        call.enqueue(new Callback<List<ListadoJuegos>>() {
+        call.enqueue(new Callback<List<Juegos>>() {
             @Override
-            public void onResponse(Call<List<ListadoJuegos>> call, Response<List<ListadoJuegos>> response) {
-                for(ListadoJuegos listadoJuegos : response.body()) {
-                    listaListadoJuegos.add(listadoJuegos);
+            public void onResponse(Call<List<Juegos>> call, Response<List<Juegos>> response) {
+                for(Juegos juegos : response.body()) {
+                    listaJuegos.add(juegos);
                 }
 
                 adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void onFailure(Call<List<ListadoJuegos>> call, Throwable t) {
+            public void onFailure(Call<List<Juegos>> call, Throwable t) {
             }
         });
     }
@@ -79,7 +90,7 @@ public class ListadoJuegosActivity extends AppCompatActivity implements AdapterV
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(ListadoJuegosActivity.this, DetalleJuegosActivity.class);
-        intent.putExtra("KEY_ID", listaListadoJuegos.get(position).getId());
+        intent.putExtra("KEY_ID", listaJuegos.get(position).getId_juego());
         startActivity(intent);
     }
 }
