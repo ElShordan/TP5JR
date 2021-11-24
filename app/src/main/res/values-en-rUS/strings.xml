@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="listado_juegos">GAMES LIST</string>
+    <string name="cerrar_sesion">LOGOUT</string>
+    <string name="nombre">Name</string>
+    <string name="descripcion">Description</string>
+    <string name="logo_juego">Game Logo</string>
+    <string name="logo_stym" translatable="false">Stym Logo</string>
+    <string name="ingresar">LOGIN</string>
+    <string name="detalle_juegos">GAMES DETAIL</string>
+    <string name="jugadores">Players:</string>
+    <string name="compatibilidad">Compatibility:</string>
+    <string name="genero">Genre:</string>
+    <string name="idioma">Language:</string>
+    <string name="clasificacion">Classification:</string>
+    <string name="volver">BACK</string>
+    <string name="nombre_usuario">User</string>
+    <string name="contrasenia">Password</string>
+    <string name="agregar">ADD</string>
+    <string name="eliminar">DELETE</string>
+    <string name="registrar">REGISTER</string>
+    <string name="registro">REGISTER</string>
+    <string name="nombre_user">Name</string>
+    <string name="apellido_user">Surname</string>
+    <string name="guardar">SAVE</string>
+    <string name="agregar_juego">ADD GAME</string>
+    <string name="imagen">Image</string>
+    <string name="jugadores_game">Players</string>
+    <string name="compatibilidad_game">Compatibility</string>
+    <string name="genero_game">Genre</string>
+    <string name="idioma_game">Language</string>
+    <string name="clasificacion_game">Classification</string>
+    <string name="activo">Active</string>
+</resources>
