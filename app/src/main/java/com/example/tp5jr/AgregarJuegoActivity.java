@@ -39,7 +39,7 @@ public class AgregarJuegoActivity extends AppCompatActivity implements View.OnCl
         btnAgregarJuegoActivityCerrarSesion = findViewById(R.id.btnAgregarJuegoActivityCerrarSesion);
 
         edtTxtAgregarJuegoActivityImagen = findViewById(R.id.edtTxtAgregarJuegoActivityImagen);
-        edtTxtAgregarJuegoActivityNombre = findViewById(R.id.edtTxtAgregarJuegoActivityNombre);
+        edtTxtAgregarJuesgoActivityNombre = findViewById(R.id.edtTxtAgregarJuegoActivityNombre);
         edtTxtAgregarJuegoActivityDescripcion = findViewById(R.id.edtTxtAgregarJuegoActivityDescripcion);
         edtTxtAgregarJuegoActivityJugadores = findViewById(R.id.edtTxtAgregarJuegoActivityJugadores);
         edtTxtAgregarJuegoActivityCompatibilidad = findViewById(R.id.edtTxtAgregarJuegoActivityCompatibilidad);
